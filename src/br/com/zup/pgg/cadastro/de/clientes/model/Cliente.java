@@ -4,12 +4,12 @@ public class Cliente {
 	
 	private String name;
 	private int age;
-	private String cpf;
+	private Long cpf;
 	private String email;
 	private String telephone;
 	private String address;
 	
-	public Cliente(String name, int age, String cpf, String email, String telephone, String address) {
+	public Cliente(String name, int age, Long cpf, String email, String telephone, String address) {
 		this.name = name;
 		this.age = age;
 		this.cpf = cpf;
@@ -30,10 +30,10 @@ public class Cliente {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	public String getCpf() {
+	public Long getCpf() {
 		return cpf;
 	}
-	public void setCpf(String cpf) {
+	public void setCpf(Long cpf) {
 		this.cpf = cpf;
 	}
 	public String getEmail() {
