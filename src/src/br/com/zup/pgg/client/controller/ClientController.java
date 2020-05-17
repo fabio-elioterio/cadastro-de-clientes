@@ -30,10 +30,14 @@ public class ClientController extends HttpServlet {
 		clientInserted.setAddress(req.getParameter("address"));
 		clientInserted.setTelephone(req.getParameter("telephone"));
 		clientInserted.setEmail(req.getParameter("email"));
+					
+			if(!clientList.containsKey(clientInserted.getCpf())) {
+				clientList.put(clientInserted.getCpf(), clientInserted);
+				writer.println("Cliente inserido com sucesso!!!!");
+		   } else {
+			writer.println("Cliente já exite!!!");
+		}
 		
-		clientList.put(clientInserted.getCpf(), clientInserted);
-		writer.println("Cliente inserido com sucesso!!!!");
-	
 	}
 	
 	@Override
@@ -42,7 +46,7 @@ public class ClientController extends HttpServlet {
 		PrintWriter writer = resp.getWriter();
 		
 		for (Client getClients : clientList.values()) {
-			writer.println("Name: " + getClients.getName());
+			writer.println("/nName: " + getClients.getName());
 			writer.println("Age: " + getClients.getAge());
 			writer.println("Cpf: " + getClients.getCpf());
 			writer.println("Addres: " + getClients.getAddress());
