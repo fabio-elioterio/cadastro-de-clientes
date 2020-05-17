@@ -3,7 +3,7 @@ package br.com.zup.pgg.client;
 public class Client {
 	
 	private String name;
-	private Long cpf;
+	private String cpf;
 	private int age;
 	private String email;
 	private String address;
@@ -18,10 +18,10 @@ public class Client {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Long getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
-	public void setCpf(Long cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 	public int getAge() {
